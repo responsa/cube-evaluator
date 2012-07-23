@@ -4,9 +4,9 @@ require File.expand_path('../lib/cube-evaluator/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Matteo Depalo"]
   gem.email         = ["matteodepalo@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{Square Cube evaluator gem}
+  gem.summary       = %q{A gem to obtain data from the Cube evaluator}
+  gem.homepage      = "https://github.com/matteodepalo/cube-evaluator"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
@@ -14,4 +14,6 @@ Gem::Specification.new do |gem|
   gem.name          = "cube-evaluator"
   gem.require_paths = ["lib"]
   gem.version       = Cube::Evaluator::VERSION
+
+  gem.add_development_dependency 'rspec'
 end

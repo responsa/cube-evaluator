@@ -1,29 +1,52 @@
-# Cube::Evaluator
+# Cube Evaluator
 
-TODO: Write a gem description
+Obtain data from cube evaluators in a nice format
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this to your Gemfile
 
-    gem 'cube-evaluator'
+```ruby
+gem cube-evaluator
+```
 
-And then execute:
+and then run
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install cube-evaluator
+`bundle`
 
 ## Usage
 
-TODO: Write usage instructions here
+Configure the cube evaluator client
 
-## Contributing
+```ruby
+# use default hostname and port of localhost:1081
+$cube_evaluator = Cube::Evaluator.new
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Added some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+# use custom hostname and port
+$cube_evaluator = Cube::Evaluator.new 'cube.example.com', 2280
+```
+
+Ask for some metrics
+
+```ruby
+$cube_evaluator.metric(:expression => 'sum(request)', :start => Time.now - 2592000, :stop => Time.now, :limit => 10, :step => '1minute')
+```
+
+The result will be a json encoded Hash with an array of 'times' and the corresponding 'values'
+
+The supported steps are:
+
+* 10seconds
+* 1minute
+* 5minutes
+* 1hour
+* 1day
+
+For a complete guide on how to use the cube evaluator take a loot at:
+
+https://github.com/square/cube/wiki/Evaluator
+
+# TODO
+
+* Add support for evaluator events and types
+* Add tests
