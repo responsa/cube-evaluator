@@ -12,7 +12,7 @@ gem cube-evaluator
 
 and then run
 
-`bundle`
+    $ bundle
 
 ## Usage
 
