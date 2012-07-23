@@ -5,7 +5,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Matteo Depalo"]
   gem.email         = ["matteodepalo@gmail.com"]
   gem.description   = %q{Square Cube evaluator gem}
-  gem.summary       = %q{Ruby gem to obtain data from a Cube evaluator}
+  gem.summary       = %q{A Cube Evaluator Ruby client}
   gem.homepage      = "https://github.com/matteodepalo/cube-evaluator"
 
   gem.files         = `git ls-files`.split($\)
