@@ -1,16 +1,21 @@
 require "cube-evaluator/version"
+require 'json'
 
 module Cube
   class Evaluator
-    def initialize(url = 'localhost', port = 1081)
-      @url = "http://#{url}:#{port}/1.0/metric/get"
+    def initialize(host = 'localhost', port = 1081)
+      @url = "http://#{host}:#{port}/"
+    end
+
+    def url
+      @url || ""
     end
 
     def metric(options = {})
-      uri = URI(@url)
+      uri = URI(@url) + "1.0/metric/get"
 
       params = options.merge(options) do |k,v|
-        if v.is_a?(DateTime) || v.is_a?(Date) || v.is_a?(Time)
+        if [DateTime, Date, Time].any?{ |klass| v.is_a?(klass) }
           v.to_time.utc.iso8601
         elsif k == :step
           to_step(v)
@@ -41,6 +46,8 @@ module Cube
 
       result
     end
+
+    private
 
     def to_step(step)
       case step

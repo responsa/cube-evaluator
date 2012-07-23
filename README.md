@@ -29,7 +29,13 @@ $cube_evaluator = Cube::Evaluator.new 'cube.example.com', 2280
 Ask for some metrics
 
 ```ruby
-$cube_evaluator.metric(:expression => 'sum(request)', :start => Time.now - 2592000, :stop => Time.now, :limit => 10, :step => '1minute')
+$cube_evaluator.metric(
+  :expression => 'sum(request)',
+  :start => Time.now - 2592000,
+  :stop => Time.now,
+  :limit => 10,
+  :step => '1minute'
+)
 ```
 
 The result will be a json encoded Hash with an array of 'times' and the corresponding 'values'
@@ -49,4 +55,3 @@ https://github.com/square/cube/wiki/Evaluator
 # TODO
 
 * Add support for evaluator events and types
-* Add tests

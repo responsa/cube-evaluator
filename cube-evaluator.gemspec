@@ -16,4 +16,5 @@ Gem::Specification.new do |gem|
   gem.version       = Cube::Evaluator::VERSION
 
   gem.add_development_dependency 'rspec'
+  gem.add_development_dependency 'webmock'
 end
