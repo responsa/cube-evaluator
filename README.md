@@ -7,7 +7,7 @@ Obtain data from cube evaluators in a nice format
 Add this to your Gemfile
 
 ```ruby
-gem cube-evaluator
+gem 'cube-evaluator'
 ```
 
 and then run
