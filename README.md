@@ -40,7 +40,22 @@ $cube_evaluator.metric(
 )
 ```
 
-The result will be a json encoded Hash with an array of 'times' and the corresponding 'values'
+The result will be a json encoded Hash with an array of 'times' and the corresponding 'values' like
+
+```ruby
+{ 
+  "times" => [
+    "2012-07-16T11:40:00.000Z",
+    "2012-07-16T11:41:00.000Z",
+    "2012-07-16T11:42:00.000Z",
+    "2012-07-16T11:43:00.000Z",
+    "2012-07-16T11:44:00.000Z",
+    "2012-07-16T11:45:00.000Z",
+    "2012-07-16T11:46:00.000Z"
+  ],
+  "values" => [1, 2, 3, 4, 5, 6, 7]}
+}
+```
 
 The supported steps are:
 
