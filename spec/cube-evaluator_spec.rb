@@ -28,8 +28,17 @@ describe Cube::Evaluator do
         {"time" => "2012-07-16T11:46:00.000Z", "value" => 7}
       ]
 
-      stub_request(:get, "http://localhost:1081/1.0/metric/get?expression=sum(cube_requests)&limit=10&start=2012-04-16T16:00:00Z&step=6e4&stop=2012-04-16T17:00:00Z").
-        with(:headers => {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
+      stub_request(:get, "http://localhost:1081/1.0/metric/get").
+        with(
+          :query => {
+            'expression' => 'sum(cube_requests)',
+            'start' => '2012-04-16T16:00:00Z',
+            'stop' => '2012-04-16T17:00:00Z',
+            'step' => '6e4',
+            'limit' => '10'
+          },
+          :headers => {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}
+        ).
         to_return(:status => 200, :body => @fake_response.to_json, :headers => {})
     end
 
