@@ -1,6 +1,6 @@
-# Cube Evaluator
-
 # URL Formatter [![Build Status](https://secure.travis-ci.org/matteodepalo/cube-evaluator.png)](http://travis-ci.org/matteodepalo/cube-evaluator)
+
+# Cube Evaluator
 
 Obtain data from cube evaluators in a nice format
 
